@@ -16,9 +16,10 @@ router.get("/", async (req, res) => {
             });
         }
 
-        const weather =
-            await weatherService.getCurrentWeather(city);
+        const unit = req.query.unit || "metric";
 
+        const weather =
+            await weatherService.getCurrentWeather(city, unit);
         res.json(weather);
 
     } catch (error) {
