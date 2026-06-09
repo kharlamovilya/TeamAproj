@@ -32,4 +32,26 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/forecast", async (req, res) => {
+    try {
+        const city = req.query.city;
+        const unit = req.query.unit || "metric";
+
+        if (!city) {
+            return res.status(400).json({
+                error: "City parameter is required"
+            });
+        }
+
+        const forecast = await weatherService.getForecast(city, unit);
+
+        res.json(forecast);
+
+    } catch (error) {
+        res.status(500).json({
+            error: "Failed to fetch forecast data"
+        });
+    }
+});
+
 module.exports = router;
