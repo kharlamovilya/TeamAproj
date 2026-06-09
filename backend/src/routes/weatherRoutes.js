@@ -1,22 +1,34 @@
 const express = require("express");
-
 const router = express.Router();
+
+const weatherService =
+    require("../services/weatherService");
 
 router.get("/", async (req, res) => {
 
-    const city = req.query.city;
+    try {
 
-    if (!city) {
-        return res.status(400).json({
-            error: "City parameter is required"
+        const city = req.query.city;
+
+        if (!city) {
+            return res.status(400).json({
+                error: "City parameter is required"
+            });
+        }
+
+        const weather =
+            await weatherService.getCurrentWeather(city);
+
+        res.json(weather);
+
+    } catch (error) {
+        console.log("WEATHER API ERROR:", error.response?.data || error.message);
+
+        res.status(500).json({
+            error: "Failed to fetch weather data",
+            details: error.response?.data || error.message
         });
     }
-
-    res.json({
-        city: city,
-        temperature: 25,
-        description: "Sunny"
-    });
 });
 
 module.exports = router;
