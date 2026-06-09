@@ -2,20 +2,20 @@
 
 Project: Interactive Weather Dashboard
 
-| SRS ID | Requirement Description              | Code File / Module                                                         | Test Case ID |
-| ------ | ------------------------------------ | -------------------------------------------------------------------------- | ------------ |
-| FR-01  | Search weather by city name          | backend/src/routes/weatherRoutes.js                                        | TC-01        |
-| FR-02  | Display current weather data         | backend/src/services/weatherService.js                                     | TC-02        |
-| FR-03  | Display forecast data                | backend/src/services/weatherService.js                                     | TC-03        |
-| FR-04  | Save favorite cities                 | backend/src/routes/favoritesRoutes.js                                      | TC-04        |
-| FR-05  | Remove favorite cities               | backend/src/routes/favoritesRoutes.js                                      | TC-05        |
-| FR-06  | View search history                  | backend/src/routes/historyRoutes.js                                        | TC-06        |
-| FR-07  | Switch temperature units             | backend/src/services/weatherService.js, frontend/script.js                 | TC-07        |
-| FR-08  | Handle errors properly               | backend/src/routes/weatherRoutes.js                                        | TC-08        |
-| FR-09  | Responsive interface                 | frontend/index.html, frontend/style.css                                    | TC-09        |
-| FR-10  | Store data for favorites and history | backend/src/routes/favoritesRoutes.js, backend/src/routes/historyRoutes.js | TC-10        |
-| FR-11  | Use external weather API             | backend/src/services/weatherService.js                                     | TC-11        |
-| FR-12  | Dashboard user interface             | frontend/index.html, frontend/script.js                                    | TC-12        |
+| SRS ID | Requirement Description              | Code File / Module                   | Actual Test File                   |
+| ------ | ------------------------------------ | ------------------------------------ | ---------------------------------- |
+| FR-01  | Search weather by city name          | weatherRoutes.js                     | weather.test.js                    |
+| FR-02  | Display current weather data         | weatherService.js                    | weather.test.js                    |
+| FR-03  | Display forecast data                | weatherService.js                    | weather.test.js                    |
+| FR-04  | Save favorite cities                 | favoritesRoutes.js                   | favorites.test.js                  |
+| FR-05  | Remove favorite cities               | favoritesRoutes.js                   | favoritesDelete.test.js            |
+| FR-06  | View search history                  | historyRoutes.js                     | history.test.js                    |
+| FR-07  | Switch temperature units             | weatherService.js, script.js         | weather.test.js                    |
+| FR-08  | Handle errors properly               | weatherRoutes.js                     | weather.test.js                    |
+| FR-09  | Responsive interface                 | index.html, style.css                | Manual Testing                     |
+| FR-10  | Store data for favorites and history | favoritesRoutes.js, historyRoutes.js | favorites.test.js, history.test.js |
+| FR-11  | Use external weather API             | weatherService.js                    | weather.test.js                    |
+| FR-12  | Dashboard UI                         | index.html, script.js                | Manual Testing                     |
 
 ## Test Case Mapping
 
